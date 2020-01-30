@@ -11,6 +11,8 @@ import findTopics from "../utils/lda"
 
 const ReaderView = () => {
   const article = store.getState().news.current_article;
+  const articleParagraphs = article.parsedContent ? article.parsedContent.paragraphs : []
+
   // const topics = findTopics([article.title, article.description, article.content], article.paragraphs)
   // console.log(topics)
 
@@ -35,7 +37,7 @@ const ReaderView = () => {
         <h3>{article.description}</h3>
         <p id='reader-view-author'>{`By ${article.author}`}</p>
         <a href={article.url}>Link to Original</a>
-        <TextBlock paragraphs={article.paragraphs}/>
+        <TextBlock paragraphs={articleParagraphs}/>
       </div>
     </div>
   );
