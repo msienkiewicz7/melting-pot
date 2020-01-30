@@ -8,16 +8,14 @@ import contentParser from '../utils/contentParser'
 class ContentViewItems extends Component {
 
   parseArticleContent(article){
-    contentParser(article.url, article.content, article.description, (articleParagraphs) => {
-      article.paragraphs = articleParagraphs
+    contentParser(article.url, article.content, article.description, (parsedContent) => {
+      article.parsedContent = parsedContent
       store.dispatch(setArticle(article));
       store.dispatch(setContentComponent(Components.READER_VIEW))
     })
   }
 
   showRenderView(article){
-    article.paragraphs = [];
-
     store.dispatch(setArticle(article));
     store.dispatch(setContentComponent(Components.READER_VIEW))
 
