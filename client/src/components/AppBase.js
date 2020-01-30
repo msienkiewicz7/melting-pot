@@ -16,7 +16,7 @@ import sideBarSectionsExampleData from '../example/sideBarSections.json';
 import api from '../utils/API';
 
 import store from '../store'
-import { setSections, setArticle, addSection } from '../actions/newsActions'
+import { setSections, addSection } from '../actions/newsActions'
 
 import { Components } from '../utils/Components';
 
